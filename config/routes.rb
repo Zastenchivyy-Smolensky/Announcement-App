@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  get 'user/new'
   root "shows#top"
-  get 'shows/top'
-  get 'shows/about'
+  get "about", to:"shows#about"
+  get "contact", to:"shows#contact"
+  get "/signup", to:"users#new"
+  resources :users
 end
